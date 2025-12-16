@@ -3,6 +3,7 @@ PROMPT_TYPE="qwen25-math-cot"
 
 # Qwen2.5-Math-1.5B-Instruct
 export CUDA_VISIBLE_DEVICES="0"
+bash sh/eval.sh "qwen25-math-cot" "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B"
 MODEL_NAME_OR_PATH="Qwen/Qwen2.5-Math-1.5B-Instruct"
 bash sh/eval.sh $PROMPT_TYPE $MODEL_NAME_OR_PATH
 

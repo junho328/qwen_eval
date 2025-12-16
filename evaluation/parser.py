@@ -586,6 +586,8 @@ def parse_ground_truth(example: Dict[str, Any], data_name):
     if data_name in ["math", "minerva_math"]:
         gt_cot = example["solution"]
         gt_ans = extract_answer(gt_cot, data_name)
+    elif data_name == "math_500":
+        gt_cot,gt_ans = None,example["answer"]
     elif data_name == "gsm8k":
         gt_cot, gt_ans = example["answer"].split("####")
     elif data_name == "svamp":
@@ -612,6 +614,8 @@ def parse_ground_truth(example: Dict[str, Any], data_name):
     elif data_name == "mmlu_stem":
         abcd = "ABCD"
         gt_cot, gt_ans = None, abcd[example["answer"]]
+    elif data_name == "gpqa_main":
+        gt_cot, gt_ans = None, example["answer"]
     elif data_name == "sat_math":
         gt_cot, gt_ans = None, example["Answer"]
     elif data_name == "aqua":
